@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="wiph=device-wiph, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="images/quiz.png" />
+    <title>Quiz</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="info-container">
+        <div class="instruction-container">
+          <div class="overview">
+            <h3>Quiz Overview</h3>
+            <p>
+              Test your knowledge of HTML, CSS, and JavaScript with this
+              20-question multiple-choice quiz.
+            </p>
+          </div>
+          <hr />
+          <div class="format">
+            <h4>Format:</h4>
+            <p>Each question has four options. Choose the correct one.</p>
+          </div>
+          <div class="instruction">
+            <h4>Instructions:</h4>
+            <p>You have 10 seconds to answer particular question.</p>
+            <p>Use Next to proceed questions.</p>
+          </div>
+          <div class="scoring">
+            <h4>Scoring:</h4>
+            <p>
+              Results with your score and correct answers will be shown at the
+              end.
+            </p>
+          </div>
+          <div class="start-button">
+            <button type="button" onclick="fetchQuestions()">Start Quiz</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

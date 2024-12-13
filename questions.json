@@ -1,0 +1,124 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "What does HTML stand for?",
+      "options": ["Hyper Text Markup Language", "Hyperlinks and Text Markup Language", "Home Tool Markup Language", "Hyperlink Text Markup Language"],
+      "answer": "Hyper Text Markup Language"
+    },
+    {
+      "id": 2,
+      "question": "Which of the following is a valid CSS selector?",
+      "options": ["#id", ".class", "id", "both #id and .class"],
+      "answer": "both #id and .class"
+    },
+    {
+      "id": 3,
+      "question": "Which of these is used to link an external CSS file in HTML?",
+      "options": ["<script>", "<link>", "<css>", "<style>"],
+      "answer": "<link>"
+    },
+    {
+      "id": 4,
+      "question": "Which tag is used to define a table in HTML?",
+      "options": ["<tr>", "<table>", "<td>", "<th>"],
+      "answer": "<table>"
+    },
+    {
+      "id": 5,
+      "question": "In CSS, which property is used to change the background color?",
+      "options": ["bgcolor", "color", "background", "background-color"],
+      "answer": "background-color"
+    },
+    {
+      "id": 6,
+      "question": "Which of the following is a JavaScript data type?",
+      "options": ["String", "Integer", "Character", "All of the above"],
+      "answer": "String"
+    },
+    {
+      "id": 7,
+      "question": "Which HTML element is used for inserting an image?",
+      "options": ["<img>", "<image>", "<src>", "<pic>"],
+      "answer": "<img>"
+    },
+    {
+      "id": 8,
+      "question": "How do you declare a JavaScript variable?",
+      "options": ["var x = 10;", "variable x = 10;", "x = 10;", "declare x = 10;"],
+      "answer": "var x = 10;"
+    },
+    {
+      "id": 9,
+      "question": "Which CSS property is used to set the font size?",
+      "options": ["font-size", "text-size", "font-style", "text-style"],
+      "answer": "font-size"
+    },
+    {
+      "id": 10,
+      "question": "Which HTML element defines a list of items in order?",
+      "options": ["<ol>", "<ul>", "<li>", "<list>"],
+      "answer": "<ul>"
+    },
+    {
+      "id": 11,
+      "question": "What does the 'display' property in CSS do?",
+      "options": ["Sets the layout of an element", "Changes text color", "Adjusts element margins", "Changes font size"],
+      "answer": "Sets the layout of an element"
+    },
+    {
+      "id": 12,
+      "question": "Which of the following is correct syntax to create a function in JavaScript?",
+      "options": ["function = myFunction(){}", "function myFunction() {}", "function: myFunction{}", "myFunction() function{}"],
+      "answer": "function myFunction() {}"
+    },
+    {
+      "id": 13,
+      "question": "Which tag is used to define a link in HTML?",
+      "options": ["<link>", "<a>", "<href>", "<url>"],
+      "answer": "<a>"
+    },
+    {
+      "id": 14,
+      "question": "What does CSS stand for?",
+      "options": ["Cascading Style Sheets", "Computer Style Sheets", "Creative Style Sheets", "Cascading Style Script"],
+      "answer": "Cascading Style Sheets"
+    },
+    {
+      "id": 15,
+      "question": "What is the correct HTML tag for the largest heading?",
+      "options": ["<head>", "<h6>", "<h1>", "<heading>"],
+      "answer": "<h1>"
+    },
+    {
+      "id": 16,
+      "question": "Which method in JavaScript is used to find the length of a string?",
+      "options": ["string.length()", "string.size()", "string.length", "length(string)"],
+      "answer": "string.length"
+    },
+    {
+      "id": 17,
+      "question": "How do you center text in CSS?",
+      "options": ["text-align: center;", "center-align: text;", "align-text: center;", "text-center: true;"],
+      "answer": "text-align: center;"
+    },
+    {
+      "id": 18,
+      "question": "Which tag is used to define a paragraph in HTML?",
+      "options": ["<p>", "<paragraph>", "<para>", "<text>"],
+      "answer": "<p>"
+    },
+    {
+      "id": 19,
+      "question": "Which event occurs when a user clicks on an HTML element?",
+      "options": ["onClick", "onPress", "onMouseDown", "onTouch"],
+      "answer": "onClick"
+    },
+    {
+      "id": 20,
+      "question": "Which property in CSS is used to set the text color?",
+      "options": ["color", "font-color", "text-color", "background-color"],
+      "answer": "color"
+    }
+  ]
+}
