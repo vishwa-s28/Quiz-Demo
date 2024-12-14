@@ -9,6 +9,7 @@ body {
   padding: 0;
   background-color: #e9dfdf;
   font-family: sans-serif;
+  /* overflow-y: auto; */
 }
 
 .container {
@@ -89,6 +90,7 @@ button {
   background-color: #e7e7e7;
   margin: 8px 0;
   border-radius: 5px;
+  /* border: 1px solid #e7e7e7; */
   cursor: pointer;
   transition: background-color 0.3s;
 }
@@ -96,7 +98,9 @@ button {
 .options li:hover {
   background-color: #c7c7c7;
 }
-
+.selected {
+  background-color: rgb(193, 193, 226) !important;
+}
 .options li:focus {
   outline: none;
   background-color: #c7c7c7;
@@ -130,7 +134,7 @@ button {
   width: 100%;
 }
 
-.sub-container h2 {
+.sub-container h3 {
   justify-self: center;
 }
 
@@ -149,6 +153,10 @@ button {
   /* font-size: 15px; */
   cursor: pointer;
 }
+/* .submitted {
+  background-color: rgb(236, 15, 15) !important;
+  color: white;
+} */
 #correct {
   background-color: rgb(62, 224, 62);
   border: 1px solid rgb(62, 224, 62);
@@ -180,7 +188,8 @@ button {
 .details {
   /* margin: 10px; */
   overflow-y: auto;
-  max-height: 250px;
+  max-height: 350px;
+  padding: 10px;
 }
 .details::-webkit-scrollbar {
   width: 8px;
@@ -195,12 +204,12 @@ button {
   border: 2px solid white;
 }
 
-.result-container li.selected {
-  background-color: rgb(240, 181, 181);
+.result-container li.submitted {
+  background-color: rgb(247, 191, 191);
 }
 
 .result-container li.correct {
-  background-color: #c8e6c9;
+  background-color: white;
 }
 
 .result-container ol {
@@ -228,6 +237,7 @@ button {
   /* padding: 10px;
   margin: 10px; */
   margin-bottom: 20px;
+  padding: 10px;
 }
 .question-block p {
   display: flex;
@@ -238,4 +248,16 @@ button {
   /* text-align: center; */
   margin-bottom: 15px;
   font-family: Arial, sans-serif;
+}
+.bg-blue {
+  background-color: rgb(208, 238, 208);
+  border-radius: 10px;
+}
+.bg-red {
+  background-color: #f7dcdc;
+  border-radius: 10px;
+}
+.bg-yellow {
+  background-color: rgb(247, 247, 195);
+  border-radius: 10px;
 }

@@ -150,20 +150,42 @@ function handleTimeout() {
 
 function showResults() {
   const container = document.querySelector(".container");
-
   container.innerHTML = "";
 
-  const correctIndices = results
-    .map((status, index) => (status === "correct" ? index : -1))
-    .filter((index) => index !== -1);
+  const allQuestions = results.map((status, index) => {
+    const question = questions[index];
+    const options = question.options
+      .map((option, optionIndex) => {
+        const isCorrect = question.options[optionIndex] === question.answer;
+        const isSelected = answers[index] === optionIndex;
 
-  const wrongIndices = results
-    .map((status, index) => (status === "wrong" ? index : -1))
-    .filter((index) => index !== -1);
+        let liClass = "";
+        if (isCorrect) {
+          liClass = "correct";
+        } else if (isSelected) {
+          liClass = "submitted";
+        }
 
-  const unansweredIndices = results
-    .map((status, index) => (status === "unanswered" ? index : -1))
-    .filter((index) => index !== -1);
+        return `<li class="${liClass}">${escapeHTML(option)}</li>`;
+      })
+      .join("");
+
+    let questionBlockClass = "";
+    if (status === "correct") {
+      questionBlockClass = "bg-blue";
+    } else if (status === "wrong") {
+      questionBlockClass = "bg-red";
+    } else if (status === "unanswered") {
+      questionBlockClass = "bg-yellow";
+    }
+
+    return `
+      <div class="question-block ${questionBlockClass}" tootltip="correct">
+        <p>${index + 1}. ${escapeHTML(question.question)}</p>
+        <ol>${options}</ol>
+      </div>
+    `;
+  });
 
   const resultSummary = `
     <div class="result-container">
@@ -171,74 +193,25 @@ function showResults() {
           <h2>Quiz Results</h2>
           <hr />
           <div class="result">
-            <button id="correct">Correct: ${correctIndices.length}</button>
-            <button id="wrong">Wrong: ${wrongIndices.length}</button>
-            <button id="unanswered">Unanswered: ${unansweredIndices.length}</button>
+            <button id="correct">Correct: ${
+              results.filter((r) => r === "correct").length
+            }</button>
+            <button id="wrong">Wrong: ${
+              results.filter((r) => r === "wrong").length
+            }</button>
+            <button id="unanswered">Unanswered: ${
+              results.filter((r) => r === "unanswered").length
+            }</button>
             <button id="retry" onclick="location.reload()">Retry Quiz</button>
           </div>
-          <div class="details"></div>
+          <div class="details">
+            ${allQuestions.join("")}
+          </div>
         </div>
     </div>
   `;
 
   container.innerHTML = resultSummary;
-
-  document.getElementById("correct").addEventListener("click", () => {
-    showDetails("Correct Questions", correctIndices);
-  });
-  document.getElementById("wrong").addEventListener("click", () => {
-    showDetails("Wrong Questions", wrongIndices);
-  });
-  document.getElementById("unanswered").addEventListener("click", () => {
-    showDetails("Unanswered Questions", unansweredIndices);
-  });
-}
-
-function showDetails(title, indices) {
-  const detailsContainer = document.querySelector(".details");
-
-  if (indices.length === 0) {
-    detailsContainer.innerHTML =
-      "<p style='text-align: center;'>No questions in this category.</p>";
-    detailsContainer.scrollTop = 0;
-    return;
-  }
-
-  const questionList = indices
-    .map((id, index) => {
-      const question = questions[id];
-      const options = question.options
-        .map((option, optionIndex) => {
-          const isCorrect = question.options[optionIndex] === question.answer;
-          const isSelected = answers[id] === optionIndex;
-
-          let liClass = "";
-          if (isCorrect) {
-            liClass = "correct";
-          } else if (isSelected) {
-            liClass = "selected";
-          }
-
-          return `<li class="${liClass}">${escapeHTML(option)}</li>`;
-        })
-        .join("");
-
-      return `
-        <div class="question-block">
-          <p>${index + 1}. ${escapeHTML(question.question)}</p>
-          <ol>${options}</ol>
-        </div>
-      `;
-    })
-    .join("");
-
-  detailsContainer.innerHTML = `
-    <div class="question-container">
-      <p style="text-align: center; text-decoration: underline;">${title}</p>
-      ${questionList}
-    </div>
-  `;
-  detailsContainer.scrollTop = 0;
 }
 
 function escapeHTML(str) {
