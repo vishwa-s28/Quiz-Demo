@@ -20,12 +20,14 @@ function renderQuestionContainer() {
 
 async function fetchQuestions() {
   try {
-    const response = await fetch("http://localhost:3000/questions");
+    const response = await fetch(
+      "https://vishwa-s28.github.io/quiz-api/questions.json"
+    );
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
-
-    questions = await response.json();
+    let resJson = await response.json();
+    questions = resJson["questions"];
     answers = Array(questions.length).fill(undefined);
     results = Array(questions.length).fill("unanswered");
 
@@ -61,7 +63,7 @@ async function fetchQuestions() {
       <div class="error-message">
         <h2>Oops! Something went wrong.</h2>
         <p>We couldn't load the quiz questions. Please check your internet connection or try again later.</p>
-        <button id="retry" onclick="location.reload()">Retry</button>
+        <button id="button" onclick="location.reload()">Try again</button>
       </div>
     `;
   }

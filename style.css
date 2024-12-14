@@ -46,10 +46,9 @@ body {
 }
 .start-button button:hover {
   background-color: rgb(2, 155, 2);
-}
-button {
   cursor: pointer;
 }
+
 .timer {
   color: red;
   float: right;
@@ -120,6 +119,7 @@ button {
 .btn:enabled {
   background-color: rgb(19, 184, 19);
   color: white;
+  cursor: pointer;
 }
 .result-container {
   background-color: white;
@@ -151,29 +151,21 @@ button {
   border-radius: 10px;
   font-weight: bolder;
   /* font-size: 15px; */
-  cursor: pointer;
+  border: none;
 }
-/* .submitted {
-  background-color: rgb(236, 15, 15) !important;
-  color: white;
-} */
 #correct {
-  background-color: rgb(62, 224, 62);
-  border: 1px solid rgb(62, 224, 62);
+  background-color: rgb(208, 238, 208);
 }
 #wrong {
-  background-color: rgb(236, 15, 15);
-  border: 1px solid rgb(236, 15, 15);
-  color: white;
+  background-color: #f7dcdc;
 }
 #unanswered {
-  background-color: yellow;
-  border: 1px solid yellow;
+  background-color: rgb(247, 247, 195);
 }
 #retry {
-  background-color: rgb(14, 136, 236);
-  border: 1px solid rgb(14, 136, 236);
-  color: white;
+  background-color: rgb(203, 220, 235);
+  /* color: white; */
+  cursor: pointer;
 }
 .error-message button {
   padding: 10px;
